@@ -1,0 +1,35 @@
+<!-- templates/exchange/index.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contract Management</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'exchange/style.css' %}">
+</head>
+<body>
+    <h1>Brokerages</h1>
+    <ul>
+        {% for brokerage in brokerages %}
+        <li>{{ brokerage.name }}</li>
+        {% endfor %}
+    </ul>
+    <h1>Brokers</h1>
+    <ul>
+        {% for broker in brokers %}
+        <li>{{ broker.name }}</li>
+        {% endfor %}
+    </ul>
+    <h1>Commodities</h1>
+    <ul>
+        {% for commodity in commodities %}
+        <li>{{ commodity.name }}</li>
+        {% endfor %}
+    </ul>
+    <h1>Contracts</h1>
+    <ul>
+        {% for contract in contracts %}
+        <li>{{ contract.broker }} - {{ contract.commodity }} ({{ contract.type }})</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

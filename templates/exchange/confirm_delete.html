@@ -1,0 +1,17 @@
+<!-- templates/exchange/confirm_delete.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contract Management - Confirm Delete</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'exchange/style.css' %}">
+</head>
+<body>
+    <h1>Are you sure you want to delete "{{ object }}"?</h1>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Yes, delete</button>
+        <a href="{% url 'index' %}">Cancel</a>
+    </form>
+</body>
+</html>
